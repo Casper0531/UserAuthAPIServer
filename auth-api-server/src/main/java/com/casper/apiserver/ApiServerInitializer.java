@@ -22,6 +22,10 @@ public class ApiServerInitializer extends ChannelInitializer<SocketChannel>{
 	}
 
 
+	/*
+	 * Data Reception case Handler Flow (2-3-4-5)
+	 * Data Transmition case Handler Flow (6-5-4)
+	 */
 	@Override
 	protected void initChannel(SocketChannel ch){
 		// 클라이언트 채널로 수신된 Http데이터를 처리하기 위한 채널 파이프라인 객체 
