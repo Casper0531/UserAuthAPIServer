@@ -5,6 +5,8 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.casper.apiserver.service.RequestParamException;
+import com.casper.apiserver.service.ServiceException;
 import com.google.gson.JsonObject;
 
 public abstract class ApiRequestTemplate implements ApiRequest{

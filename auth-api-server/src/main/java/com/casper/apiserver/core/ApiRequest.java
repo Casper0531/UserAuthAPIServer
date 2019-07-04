@@ -1,5 +1,7 @@
 package com.casper.apiserver.core;
 
+import com.casper.apiserver.service.RequestParamException;
+import com.casper.apiserver.service.ServiceException;
 import com.google.gson.JsonObject;
 
 /*

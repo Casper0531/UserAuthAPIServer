@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.casper.api</groupId>
+  <artifactId>auth-api-server</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Authentication API Server</name>
+  <description>User Authentication API Server</description>
+  
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<spring.version>4.1.6.RELEASE</spring.version>
+  </properties>
+  
+  <dependencies>
+  
+  	<dependency>
+  		<groupId>io.netty</groupId>
+  		<artifactId>netty-all</artifactId>
+  		<version>4.0.28.Final</version>
+  	</dependency>
+  	
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  		<version>${spring.version}</version>
+  	</dependency>
+  	
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.12</version>
+  	</dependency>
+  	
+  	<dependency>
+  		<groupId>org.hsqldb</groupId>
+  		<artifactId>hsqldb</artifactId>
+  		<version>2.5.0</version>
+  	</dependency>
+  	
+  	<dependency>
+  		<groupId>org.mybatis</groupId>
+  		<artifactId>mybatis</artifactId>
+  		<version>3.3.0</version>
+  	</dependency>
+
+  	<dependency>
+  		<groupId>redis.clients</groupId>
+  		<artifactId>jedis</artifactId>
+  		<version>2.7.3</version>
+  	</dependency>
+
+	<!-- gson -->
+	<dependency>
+		<groupId>com.google.code.gson</groupId>
+		<artifactId>gson</artifactId>
+		<version>2.3.1</version>
+	</dependency>
+		
+	<dependency>
+		<groupId>org.apache.logging.log4j</groupId>
+		<artifactId>log4j-api</artifactId>
+		<version>2.3</version>
+	</dependency>
+	
+  </dependencies>
+</project>
