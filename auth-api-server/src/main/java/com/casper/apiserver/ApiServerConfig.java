@@ -17,7 +17,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @Configuration
 @ImportResource("classpath:spring/hsqlApplicationContext.xml")
 @ComponentScan("com.casper.apiserver, com.casper.apiserver.service, com.casper.apiserver.core")
-@PropertySource("classpath:auth-api-server.properties")
+@PropertySource("classpath:api-server.properties")
 public class ApiServerConfig {
 	
 	@Value("${boss.thread.count}")
