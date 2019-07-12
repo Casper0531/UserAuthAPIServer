@@ -24,16 +24,19 @@ public class ApiServerInitializer extends ChannelInitializer<SocketChannel>{
 
 	/*
 	 * Data Reception case Handler Flow (2-3-4-5)
-	 * Data Transmition case Handler Flow (6-5-4)
+	 * Data Transmission case Handler Flow (6-5-4)
 	 */
 	@Override
 	protected void initChannel(SocketChannel ch){
-		// 클라이언트 채널로 수신된 Http데이터를 처리하기 위한 채널 파이프라인 객체 
+		
+		// 클라이언트 채널로 수신된 HTTP 데이터를 처리하기 위한 채널 파이프라인 객체 
 		ChannelPipeline p = ch.pipeline();
 		
 		if (sslCtx != null) {
 			p.addLast(sslCtx.newHandler(ch.alloc()));
 		}
+		
+		// HTTP Related Handler
 		// 클라이언트가 전송한 HTTP프로토콜 데이터를 네티의 바이트버퍼로 변환 
 		p.addLast(new HttpRequestDecoder());
 		// HTTP에서 발생하는 메시지 파편화 처리 디코더. 데이터가 나뉘어져 전송되는 경우 합쳐주는 역할 
@@ -41,6 +44,8 @@ public class ApiServerInitializer extends ChannelInitializer<SocketChannel>{
 		p.addLast(new HttpResponseEncoder());
 		// HTTP본문 데이터를 gzip압축을 사용하여 압축/해제 수행
 		p.addLast(new HttpContentCompressor());
+		
+		// API Service related Handler
 		// 클라이언트로부터 수신된 http데이터에서 헤더,데이터값을 추출하여 토큰 발급 등의 업무 처리 클래스(api server controller)
 		p.addLast(new ApiRequestParser());
 	}

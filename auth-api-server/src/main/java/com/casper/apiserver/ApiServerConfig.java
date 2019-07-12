@@ -29,6 +29,9 @@ public class ApiServerConfig {
 	@Value("${tcp.port}")
 	private int tcpPort;
 	
+	@Value("${https.port}")
+	private int httpsPort;
+	
 	@Bean(name= "bossThreadCount")
 	public int getBossThreadCount() {
 		return bossThreadCount;
@@ -43,9 +46,18 @@ public class ApiServerConfig {
 		return tcpPort;
 	}
 	
+	public int getHttpsPort() {
+		return httpsPort;
+	}
+	
 	@Bean(name = "tcpSocketAddress")
 	public InetSocketAddress tcpPort() {
 		return new InetSocketAddress(tcpPort);
+	}
+	
+	@Bean(name = "httpsSocketAddress")
+	public InetSocketAddress httpsPort() {
+		return new InetSocketAddress(httpsPort);
 	}
 	
 	@Bean

@@ -19,6 +19,7 @@ public class JedisHelper {
 	 * 제디스 연결풀 생성을 위한 도우미 클래스 내부 생성자. 싱글톤 패턴
 	 */
 	private JedisHelper() {
+		// Jedis의 커넥션풀을 사용하기 위한 apache commons pool2라이브러리 객체
 		GenericObjectPoolConfig config = new GenericObjectPoolConfig();
 		config.setMaxTotal(20);
 		config.setBlockWhenExhausted(true);
